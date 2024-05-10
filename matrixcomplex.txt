@@ -1,0 +1,67 @@
+#include<iostream>
+using namespace std;
+
+class matrix
+{
+private:
+	int num[3][3];
+	int r,c;
+public:
+	void set_matrix()
+	{
+		
+		for(r=0;r<3;r++)
+		{
+			for(c=0;c<3;c++)
+				{
+					cin>>num[r][c];
+				}
+		}
+	}
+	void get_matrix()
+	{
+		
+		for(r=0;r<3;r++)
+		{
+			for(c=0;c<3;c++)
+			{
+					cout<<num[r][c]<<"\t";
+			}
+		
+		cout<<"\n";
+		}
+	}
+	
+	matrix add(matrix temp)
+	{
+		matrix res;
+		
+		
+		for(r=0;r<3;r++)
+		{
+			for(c=0;c<3;c++)
+			{
+			res.num[r][c]=num[r][c]+temp.num[r][c];
+			}
+		}
+		return(res);
+	}
+};
+
+int main()
+{
+	matrix m1,m2;
+	cout<<"enter first number"<<endl;
+	m1.set_matrix();
+	cout<<"enter second matrix"<<endl;
+	m2.set_matrix();
+	
+	matrix m3;
+	m3=m1.add(m2);
+	m3.get_matrix();
+
+	return 0;
+}
+	
+	
+		
